@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <title>FDIP Project</title>
+
+    <link rel="stylesheet" href="./styles/main.min.css">
+</head>
+
+<body>
+
+    <h2 class="text-center">upload image</h2>
+    <br><br>
+    <input type="file" name="imageFile" id="file-inp" placeholder="Your image file">
+    <br> <br>
+    <button id="btn">send</button>
+
+    <br><br>
+    <img src="" alt="uploaded image" id="filterImage">
+
+    <script>
+
+        let fileData = null;
+
+        const postData = async (url = "", data = {}) => {
+            const response = await fetch(url, {
+                method: "POST",
+                mode: "cors",
+                cache: "no-cache",
+                credentials: "same-origin",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                redirect: "follow",
+                referrerPolicy: "no-referrer",
+                body: JSON.stringify(data),
+            });
+            return response.json();
+        }
+
+        window.onload = () => {
+            document.getElementById("file-inp").addEventListener("change", (event) => {
+                const selectedFile = event.target.files;
+                if (selectedFile.length <= 0) return;
+
+                const [imageFile] = selectedFile;
+                const fileReader = new FileReader();
+                fileReader.onload = () => {
+                    const srcData = fileReader.result;
+                    fileData = srcData
+                    // console.log('base64:', srcData)
+                };
+                fileReader.readAsDataURL(imageFile);
+
+            });
+        }
+
+        document.getElementById("btn").onclick = async () => {
+
+            let data = {
+                "imageFile": fileData.split("base64,")[1],
+                "filter": "digitalNegative"
+            }
+            // console.log(data);
+            let res = await postData("/filter", data)
+            // console.log(res);
+
+            let imageData = res["img"].slice(2, res["img"].length - 1)
+
+            document.getElementById("filterImage").src = `data:image/png;base64,${imageData}`
+        }
+    </script>
+</body>
+
+</html>
