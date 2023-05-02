@@ -80,11 +80,19 @@ def BitplaneSlicing(img):
     final = cv2.hconcat([finalr,finalv])
     return final
 def histogramegen(img):
-    #display the histogram
-    hist,bins = np.histogram(img.flatten(),256,[0,256])
-    plt.hist(img.flatten(),256,[0,256], color = 'r')
+    hist = cv2.calcHist([img],[0],None,[256],[0,256])
+    plt.plot(hist)
     plt.xlim([0,256])
-    plt.show()
+    plt.xlabel("Value")
+    plt.ylabel("Frequency")
+    fig=plt.gcf()
+    fig.canvas.draw()
+    # Now we can save it to a numpy array.
+    data = np.frombuffer(fig.canvas.tostring_rgb(), dtype=np.uint8)
+    data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    return data
+    
+    
     
 def contrastcontrol(img,contrast=18):
     # define the alpha and beta
@@ -94,6 +102,7 @@ def contrastcontrol(img,contrast=18):
     # call convertScaleAbs function
     adjusted = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
     return adjusted
+
 
 
 
@@ -110,3 +119,4 @@ filterMap = {
     "HistoGramGenration":histogramegen,
     "ContrastControl": contrastcontrol
 }
+
