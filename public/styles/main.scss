@@ -4,6 +4,8 @@
      box-sizing: border-box;
  }
 
+ @import "./section";
+
  body {
      background-color: #fff;
  }
@@ -16,4 +18,34 @@
      width: 80%;
      max-width: 600px;
      margin-top: 30px;
+ }
+
+ .main-header {
+     text-align: center;
+     font-size: xx-large;
+ }
+
+ a {
+     text-decoration: none;
+     color: inherit;
+ }
+
+ .contents {
+     font-size: xx-large;
+ }
+
+ .text-center {
+     margin: 18px 0;
+ }
+
+ img {
+     width: 100%;
+     max-width: 300px;
+     align-self: left;
+     margin: 10px;
+ }
+
+ span {
+     margin-top: 10px;
+     font-weight: bold;
  }

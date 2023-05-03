@@ -9,71 +9,65 @@
     <title>FDIP Project</title>
 
     <link rel="stylesheet" href="./styles/main.min.css">
+    <script src="./styles/main.js"></script>
 </head>
 
 <body>
 
-    <h2 class="text-center">upload image</h2>
-    <br><br>
-    <input type="file" name="imageFile" id="file-inp" placeholder="Your image file">
-    <br> <br>
-    <button id="btn">send</button>
+    <div class="game-container pop-page" id="story">
+        <div class="wrapper" id="story-wrapper">
 
-    <br><br>
-    <img src="" alt="uploaded image" id="filterImage">
+            <!-- main header -->
+            <div class="main-header game-header">
+                FDIP Project
+            </div>
 
-    <script>
+            <!-- contents -->
+            <div class="contents game-header">
+                Contents:
+            </div>
+            <p>
+            <ol>
+                <li>
+                    <a href="#negative filter">Negative Filter</a>
+                </li>
+            </ol>
+            </p>
 
-        let fileData = null;
+            <!-- negative filter -->
+            <div class="game-header" id="negative-filter">
+                Negative Filter
+            </div>
+            <p>
+                A negative image is a total inversion, in which light areas appear dark and vice versa. A negative color
+                image is additionally color-reversed, with red areas appearing cyan, greens appearing magenta, and blues
+                appearing yellow, and vice versa.
 
-        const postData = async (url = "", data = {}) => {
-            const response = await fetch(url, {
-                method: "POST",
-                mode: "cors",
-                cache: "no-cache",
-                credentials: "same-origin",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                redirect: "follow",
-                referrerPolicy: "no-referrer",
-                body: JSON.stringify(data),
-            });
-            return response.json();
-        }
+                <!-- fixed part -->
+            <h2 class="text-center">Upload image for demo</h2>
 
-        window.onload = () => {
-            document.getElementById("file-inp").addEventListener("change", (event) => {
-                const selectedFile = event.target.files;
-                if (selectedFile.length <= 0) return;
+            <!-- change ID as per your filter -->
+            <input type="file" name="imageFile" id="negative-filter-inp" class="file-inputs" autocomplete="off">
 
-                const [imageFile] = selectedFile;
-                const fileReader = new FileReader();
-                fileReader.onload = () => {
-                    const srcData = fileReader.result;
-                    fileData = srcData
-                    // console.log('base64:', srcData)
-                };
-                fileReader.readAsDataURL(imageFile);
+            <!-- change the image ID as per your filter and change place holder as well -->
 
-            });
-        }
+            <span>Original Image:</span>
+            <img src="" id="negative-filter-img-inp" alt="Image-input-here">
 
-        document.getElementById("btn").onclick = async () => {
+            <span>Negative filter Image:</span>
+            <img src="" id="negative-filter-img-out" alt="Negative-image-output-here">
 
-            let data = {
-                "imageFile": fileData.split("base64,")[1],
-                "filter": "digitalNegative"
-            }
-            // console.log(data);
-            let res = await postData("/filter", data)
-            // console.log(res);
+            <!-- change the btn id as per your filter name -->
 
-            let imageData = res["img"].slice(2, res["img"].length - 1)
 
-            document.getElementById("filterImage").src = `data:image/png;base64,${imageData}`
-        }
-    </script>
+            <button id="negative-filter-btn"
+                onclick='getFilter("digitalNegative","negative-filter-inp","negative-filter-img-inp","negative-filter-img-out" )'>get
+                Negative</button>
+            </p>
+
+
+        </div>
+    </div>
 </body>
 
 </html>

@@ -31,7 +31,7 @@ def upload_file():
     # print(len(reqData["imageFile"]))
 
     # converting image in base64 to image
-    img = readb64(reqData["imageFile"])
+    img = readb64(reqData["imageFile1"])
 
     if(reqData["filter"] not in filterMap.keys()):
         return jsonify({"msg": "filter doesn't exist"})
