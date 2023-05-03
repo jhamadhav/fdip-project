@@ -61,7 +61,7 @@ async function getFilter(filterName, inp1, imgInp1, imgOut1, inp2 = null, imgInp
     let data = {
         "imageFile1": img1,
         "imageFile2": img2,
-        "filter": "digitalNegative"
+        "filter": filterName
     }
     // console.log(data);
 
