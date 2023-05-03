@@ -34,6 +34,9 @@
                 <li>
                     <a href="#rotateimagebyClockwise-filter">Rotate clockwise Filter</a>
                 </li>
+                <li>
+                    <a href="#cartoonify-filter">cartoonify Filter</a>
+                </li>
             </ol>
             </p>
 
@@ -96,6 +99,36 @@
             <button id="negative-filter-btn"
                 onclick='getFilter("rotateimagebyClockwise","rotateimagebyClockwise-filter-inp","rotateimagebyClockwise-filter-img-inp","rotateimagebyClockwise-filter-img-out" )'>Rotate
                 Clockwise</button>
+            </p>
+
+            <!-- cartoonify filter -->
+            <div class="game-header" id="cartoonify-filter">
+                Cartoonify
+            </div>
+            <p>
+                cartoonify dfghjk
+
+                <!-- fixed part -->
+            <h2 class="text-center">Upload image for demo</h2>
+
+            <!-- change ID as per your filter -->
+            <input type="file" name="imageFile" id="cartoonify-filter-inp" class="file-inputs" autocomplete="off">
+
+            <!-- change the image ID as per your filter and change place holder as well -->
+
+            <span>Original Image:</span>
+            <img src="" id="cartoonify-filter-img-inp" alt="Image-input-here">
+
+            <span>Negative filter Image:</span>
+            <img src="" id="cartoonify-filter-img-out" alt="image-output-here">
+
+            <!-- change the btn id as per your filter name -->
+
+
+            <button id="cartoonify-filter-btn" onclick='getFilter("cartoonify",
+                "cartoonify-filter-inp",
+                "cartoonify-filter-img-inp",
+                "cartoonify-filter-img-out" )'>cartoonify</button>
             </p>
 
         </div>
