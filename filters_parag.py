@@ -130,14 +130,14 @@ def contrastcontrol(img, contrast=18):
 
 filterMap = {
     "digitalNegative": digitalNegative,
-    "RotateClockwise": rotateimagebyClockwise,
-    "RotateAntiClockwise": rotateimagebyAnticlockwise,
+    "rotateimagebyClockwise": rotateimagebyClockwise,
+    "rotateimagebyAnticlockwise": rotateimagebyAnticlockwise,
     "imageflip": imageflip,
-    "ContrastStretching": contrastStretching,
-    "GammaTransformation": gammaTransformation,
-    "LogTransformation": logTransformation,
-    "GrayLevelSlicing": graySlicing,
-    "BitPlaneSlicing": BitplaneSlicing,
-    "HistoGramGenration": histogramegen,
-    "ContrastControl": contrastcontrol
+    "contrastStretching": contrastStretching,
+    "gammaTransformation": gammaTransformation,
+    "logTransformation": logTransformation,
+    "grayLevelSlicing": graySlicing,
+    "bitPlaneSlicing": BitplaneSlicing,
+    "histoGramGenration": histogramegen,
+    "contrastControl": contrastcontrol
 }
