@@ -10,3 +10,6 @@ def digitalNegative(img):
 filterMap = {
     "digitalNegative": digitalNegative
 }
+
+
+
