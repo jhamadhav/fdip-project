@@ -7,9 +7,12 @@ def digitalNegative(img):
     return img2
 
 
+def rotateimagebyClockwise(img):
+    rotatedimg = cv2.rotate(img, cv2.ROTATE_90_CLOCKWISE)
+    return rotatedimg
+
+
 filterMap = {
-    "digitalNegative": digitalNegative
+    "digitalNegative": digitalNegative,
+    "rotateimagebyClockwise": rotateimagebyClockwise
 }
-
-
-
