@@ -4,7 +4,7 @@
      box-sizing: border-box;
  }
 
- @import "./section";
+ @import "./section", "./nav-bar";
 
  body {
      background-color: #fff;
@@ -48,4 +48,11 @@
  span {
      margin-top: 10px;
      font-weight: bold;
+ }
+
+ footer {
+     width: 100%;
+     padding: 20px;
+     text-align: center;
+     background: #efefef;
  }
