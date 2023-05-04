@@ -23,7 +23,7 @@ def histogram_equalization(image):
     return cv2.equalizeHist(cv2.cvtColor(image, cv2.COLOR_BGR2GRAY))
 
 
-def brightness_control(image, alpha=1.0, beta=0):
+def brightness_control(image, alpha=2.0, beta=0):
     """
     Adjusts the brightness of an image using the alpha and beta values.
 

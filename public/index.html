@@ -65,7 +65,57 @@
                 <li>
                     <a href="#spatial-operations">Spatial Operations</a>
                     <ol>
-
+                        <li>
+                            <a href="#digitalNegative-filter">Digital Negative</a>
+                        </li>
+                        <li>
+                            <a href="#gammaTransformation-filter">Gamma Tranformation</a>
+                        </li>
+                        <li>
+                            <a href="#logTransformation-filter">Log Transformation</a>
+                        </li>
+                        <li>
+                            <a href="#graySlicing-filter">Gray level Slicing</a>
+                        </li>
+                        <li>
+                            <a href="#BitplaneSlicing-filter">Bit Plane Slicing</a>
+                        </li>
+                        <li>
+                            <a href="#contrast_control-filter">Contrast Control</a>
+                        </li>
+                        <li>
+                            <a href="#brightness_control-filter">Brightness Control</a>
+                        </li>
+                        <li>
+                            <a href="#histogramegen-filter">Histogram Genrator</a>
+                        </li>
+                        <li>
+                            <a href="#histogram_eualization-filter">Histogram Equalizer</a>
+                        </li>
+                        <li>
+                            <a href="#canny_edge_detection-filter">Canny Edge Detection</a>
+                        </li>
+                        <li>
+                            <a href="#cartoonify-filter">Cartoonify</a>
+                        </li>
+                        <li>
+                            <a href="#smoothing-filter">Smoothing</a>
+                        </li>
+                        <li>
+                            <a href="#sharpening-filter">Sharpening</a>
+                        </li>
+                        <li>
+                            <a href="#noise_removal-filter">Noise Removal</a>
+                        </li>
+                        <li>
+                            <a href="#summer_filter-filter">Summer Filter</a>
+                        </li>
+                        <li>
+                            <a href="#winter_filter-filter">Winter Filter</a>
+                        </li>
+                        <li>
+                            <a href="#old_tv_filter-filter">Old TV Filter</a>
+                        </li>
                     </ol>
                 </li>
                 <li>
@@ -185,7 +235,6 @@
             <div class="filter-div" imgs="2" id="OR_op"></div>
             </p>
 
-
             <div class="game-header" id="XOR_op-filter">
                 Xor
             </div>
@@ -203,6 +252,186 @@
 
             <div class="filter-div" imgs="1" id="not_filter"></div>
             </p>
+
+            <!-- spatial -->
+            <div class="main-header game-header" id="spatial-operations">
+                Spatial operations
+            </div>
+            <p>
+                Spatial operations in image processing involve performing operations on the spatial domain of an image,
+                which is the two-dimensional array of pixel values that make up the image. Spatial operations can be
+                used to enhance or modify the image, extract features, or prepare it for further processing.
+                <br><br>
+                There are several types of spatial operations used in image processing, including:
+
+            </p>
+
+
+            <div class="game-header" id="digitalNegative-filter">
+                Digital Negative
+            </div>
+            <p>
+                A negative of an image is an image where its lightest areas appear as darkest and the darkest areas
+                appear as lightest.
+
+            <div class="filter-div" imgs="1" id="digitalNegative"></div>
+            </p>
+
+            <div class="game-header" id="gammaTransformation-filter">
+                Gamma Transform
+            </div>
+            <p>
+                Power-law (gamma) transformations can be mathematically expressed as . Gamma correction is important for
+                displaying images on a screen correctly, to prevent bleaching or darkening of images when viewed from
+                different types of monitors with different display settings. This is done because our eyes perceive
+                images in a gamma-shaped curve, whereas cameras capture images in a linear fashion.
+
+            <div class="filter-div" imgs="1" id="gammaTransformation"></div>
+            </p>
+
+            <div class="game-header" id="logTransformation-filter">
+                Log Transform
+            </div>
+            <p>
+                Mathematically, log transformations can be expressed as s = clog(1+r). Here, s is the output intensity,
+                r>=0 is the input intensity of the pixel, and c is a scaling constant. c is given by 255/(log (1 + m)),
+                where m is the maximum pixel value in the image. It is done to ensure that the final pixel value does
+                not exceed (L-1), or 255. Practically, log transformation maps a narrow range of low-intensity input
+                values to a wide range of output values.
+            <div class="filter-div" imgs="1" id="logTransformation"></div>
+            </p>
+
+            <div class="game-header" id="graySlicing-filter">
+                Gray Level Slicing
+            </div>
+            <p>
+                Grey level slicing is equivalent to band pass filtering. It manipulates group of intensity levels in an
+                image up to specific range by diminishing rest or by leaving them alone. This transformation is
+                applicable in medical images and satellite images such as X-ray flaws, CT scan.
+            <div class="filter-div" imgs="1" id="graySlicing"></div>
+            </p>
+
+            <div class="game-header" id="BitplaneSlicing-filter">
+                Bit Plane Slicing
+            </div>
+            <p>
+                Bit Plane Slicing (BPS) is a method of expressing an image in which each pixel is represented by one or
+                more bits of the byte. To incorporate hidden data in any slice of eight slices, the BPS approach
+                requires a bit slicing algorithm. Each pixel is represented by 8 bits in this approach.
+            <div class="filter-div" imgs="1" id="BitplaneSlicing"></div>
+            </p>
+
+            <div class="game-header" id="contrastcontrol-filter">
+                Contrast Control
+            </div>
+            <p>
+                Contrast adjustment remaps image intensity values to the full display range of the data type. An image
+                with good contrast has sharp differences between black and white. To illustrate, the image on the left
+                has poor contrast, with intensity values limited to the middle portion of the range.
+            <div class="filter-div" imgs="1" id="contrastcontrol"></div>
+            </p>
+
+            <div class="game-header" id="brightness_control-filter">
+                Brightness Control
+            </div>
+            <p>
+                To adjust the brightness of an image, we change the value of all pixels by a constant. Adding a positive
+                constant to all of the image pixel values makes the image brighter. Similarly, we can subtract a
+                positive constant from all of the pixel values to make the image darker.
+            <div class="filter-div" imgs="1" id="brightness_control"></div>
+            </p>
+
+            <div class="game-header" id="histogramegen-filter">
+                Histogram Generator
+            </div>
+            <p>
+                In digital image processing, the histogram is used for graphical representation of a digital image. A
+                graph is a plot by the number of pixels for each tonal value. Nowadays, image histogram is present in
+                digital cameras. Photographers use them to see the distribution of tones captured.
+            <div class="filter-div" imgs="1" id="histogramegen"></div>
+            </p>
+
+            <div class="game-header" id="histogram_equalization-filter">
+                Histogram Equalizer
+            </div>
+            <p>
+                Histogram Equalization is a computer image processing technique used to improve contrast in images . It
+                accomplishes this by effectively spreading out the most frequent intensity values, i.e. stretching out
+                the intensity range of the image.
+            <div class="filter-div" imgs="1" id="histogram_equalization"></div>
+            </p>
+
+            <div class="game-header" id="canny_edge_detection-filter">
+                Canny Edge Detection
+            </div>
+            <p>
+                Canny edge detection is a technique to extract useful structural information from different vision
+                objects and dramatically reduce the amount of data to be processed.
+            <div class="filter-div" imgs="1" id="canny_edge_detection"></div>
+            </p>
+
+            <div class="game-header" id="cartoonify-filter">
+                Cartoonify
+            </div>
+            <p>
+                Cartoonification of an image uses various libraries to take an input image and return a cartoon-like
+                version of the image.
+            <div class="filter-div" imgs="1" id="cartoonify"></div>
+            </p>
+
+            <div class="game-header" id="smoothing-filter">
+                Image Smoothing
+            </div>
+            <p>
+                Image smoothing is a key image enhancement technology that can remove noise within the images.
+            <div class="filter-div" imgs="1" id="smoothing"></div>
+            </p>
+
+            <div class="game-header" id="sharpening-filter">
+                Image Sharpening
+            </div>
+            <p>
+                Image sharpening encompasses any enhancement technique that highlights the edges and fine details of an
+                image.
+            <div class="filter-div" imgs="1" id="sharpening"></div>
+            </p>
+
+            <div class="game-header" id="noise_removal-filter">
+                Noise Removal
+            </div>
+            <p>
+                An intutive and easy technique to implement for image enhancement by reducing the variations in the
+                pixel intensities of the image.
+            <div class="filter-div" imgs="1" id="noise_removal"></div>
+            </p>
+
+            <div class="game-header" id="summer_filter-filter">
+                Summer Filter
+            </div>
+            <p>
+                Takes an input image and returns another image, making it appear as if it has summer-like lighting
+                conditions.
+            <div class="filter-div" imgs="1" id="summer_filter"></div>
+            </p>
+
+            <div class="game-header" id="winter_filter-filter">
+                Winter Filter
+            </div>
+            <p>
+                Takes an input image and returns another image, making it appear as if it has winter-like lighting
+                conditions.
+            <div class="filter-div" imgs="1" id="winter_filter"></div>
+            </p>
+
+            <div class="game-header" id="old_tv_filter-filter">
+                Old TV Filter
+            </div>
+            <p>
+                Takes an input image and returns another image, making it appear as if it was captured in an old
+                television.
+            <div class="filter-div" imgs="1" id="old_tv_filter"></div>
+            </p>
+
 
 
             <!-- structural operations -->

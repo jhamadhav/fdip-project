@@ -6,7 +6,7 @@ def summer_filter(image):
     def gamma_function(channel, gamma):
         invGamma = 1/gamma
         table = np.array([((i / 255.0) ** invGamma) * 255
-                          for i in np.arange(0, 256)]).asType("uint8")  # creating lookup table
+                          for i in np.arange(0, 256)], dtype=np.uint8)  # creating lookup table
         channel = cv2.LUT(channel, table)
         return channel
 
@@ -25,7 +25,7 @@ def winter_filter(image):
     def gamma_function(channel, gamma):
         invGamma = 1/gamma
         table = np.array([((i / 255.0) ** invGamma) * 255
-                          for i in np.arange(0, 256)]).astype("uint8")
+                          for i in np.arange(0, 256)], dtype=np.uint8)
         channel = cv2.LUT(channel, table)
         return channel
 
@@ -122,6 +122,9 @@ def OR_op(image1, image2):
     gray2 = cv2.resize(gray2, newShape)
 
     ORed = cv2.bitwise_or(gray1, gray2, mask=None)
+    ORed = cv2.resize(ORed, newShape)
+    print(gray1.shape)
+    print(ORed.shape)
     return ORed
 
 

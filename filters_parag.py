@@ -37,8 +37,9 @@ def contrastStretching(img):
     # Loop over the image and apply Min-Max formulae
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
-            minmax_img[i, j] = 255*(img[i, j]-np.min(img)) / \
-                (np.max(img)-np.min(img))
+            a = 255*(img[i, j]-np.min(img))
+            b = (np.max(img)-np.min(img))
+            minmax_img[i, j] = a/b
     return minmax_img
 
 
@@ -59,6 +60,8 @@ def logTransformation(img):
 
 def graySlicing(img):
     #  gray level slicing
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
     m, n = img.shape
     for i in range(m):
         for j in range(n):
@@ -68,6 +71,8 @@ def graySlicing(img):
 
 
 def BitplaneSlicing(img):
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
     lst = []
     for i in range(img.shape[0]):
         for j in range(img.shape[1]):
@@ -124,7 +129,7 @@ def contrastcontrol(img, contrast=18):
     beta = 5  # Brightness control (0,100)
 
     # call convertScaleAbs function
-    adjusted = cv2.convertScaleAbs(image, alpha=alpha, beta=beta)
+    adjusted = cv2.convertScaleAbs(img, alpha=alpha, beta=beta)
     return adjusted
 
 
