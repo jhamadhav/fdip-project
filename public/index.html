@@ -71,7 +71,18 @@
                 <li>
                     <a href="#structural-manipulation">Structural manipulation</a>
                     <ol>
-
+                        <li>
+                            <a href="#rotateimagebyAnticlockwise-filter">Rotate Anti-Clockwise</a>
+                        </li>
+                        <li>
+                            <a href="#rotateimagebyClockwise-filter">Rotate Clockwise</a>
+                        </li>
+                        <li>
+                            <a href="#Horizontal_stack-filter">Horizontal stack</a>
+                        </li>
+                        <li>
+                            <a href="#Vertical_stack-filter">Vertical stack</a>
+                        </li>
                     </ol>
                 </li>
             </ol>
@@ -165,8 +176,6 @@
             <div class="filter-div" imgs="2" id="AND_op"></div>
             </p>
 
-
-
             <div class="game-header" id="OR_op-filter">
                 Or
             </div>
@@ -195,6 +204,60 @@
             <div class="filter-div" imgs="1" id="not_filter"></div>
             </p>
 
+
+            <!-- structural operations -->
+            <div class="main-header game-header" id="structural-manipulation">
+                Structural manipulation Operations
+            </div>
+            <p>
+                Structural manipulation in image processing involves modifying the shape, size, or orientation of image
+                structures such as edges, lines, or regions. These manipulations can be used to enhance or suppress
+                specific features in an image, or to extract useful information for further processing.
+                <br><br>
+                There are several techniques used for structural manipulation in image processing, including:
+            </p>
+
+            <!-- anti clock -->
+            <div class="game-header" id="rotateimagebyAnticlockwise-filter">
+                Rotate Anti Clockwise
+            </div>
+            <p>
+                Image rotation is a common image processing routine with applications in matching, alignment, and other
+                image-based algorithms. Use this function to rotate your input image clockwise by 90 degrees.
+
+
+            <div class="filter-div" imgs="1" id="rotateimagebyAnticlockwise"></div>
+            </p>
+
+            <!-- clock -->
+            <div class="game-header" id="rotateimagebyClockwise-filter">
+                Rotate Clockwise
+            </div>
+            <p>
+                Image rotation is a common image processing routine with applications in matching, alignment, and other
+                image-based algorithms. Use this function to rotate your input image clockwise by 90 degrees.
+
+
+            <div class="filter-div" imgs="1" id="rotateimagebyClockwise"></div>
+            </p>
+
+            <!-- horizontal -->
+            <div class="game-header" id="Horizontal_stack-filter">
+                Horizontal Stack
+            </div>
+            <p>
+                Uses the numpy.concatenate() function to join two images horizontally.
+            <div class="filter-div" imgs="2" id="Horizontal_stack"></div>
+            </p>
+
+            <!-- vertical -->
+            <div class="game-header" id="Vertical_stack-filter">
+                Vertical Stack
+            </div>
+            <p>
+                Uses the numpy.concatenate() function to join two images vertically.
+            <div class="filter-div" imgs="2" id="Vertical_stack"></div>
+            </p>
         </div>
     </div>
 </body>

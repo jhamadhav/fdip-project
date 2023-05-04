@@ -143,11 +143,26 @@ def XOR_op(image1, image2):
 
 
 def Horizontal_stack(image1, image2):
+    img1Shape = image1.shape
+    img2Shape = image2.shape
+    newShape = (min(img1Shape[0], img2Shape[0]),
+                min(img1Shape[1], img2Shape[1]))
+
+    image1 = cv2.resize(image1, newShape)
+    image2 = cv2.resize(image2, newShape)
+
     stacked_H = np.concatenate((image1, image2), axis=1)
     return stacked_H
 
 
 def Vertical_stack(image1, image2):
+    img1Shape = image1.shape
+    img2Shape = image2.shape
+    newShape = (min(img1Shape[0], img2Shape[0]),
+                min(img1Shape[1], img2Shape[1]))
+
+    image1 = cv2.resize(image1, newShape)
+    image2 = cv2.resize(image2, newShape)
     stacked_V = np.concatenate((image1, image2), axis=0)
     return stacked_V
 
