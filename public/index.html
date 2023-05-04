@@ -29,7 +29,7 @@
             <p>
             <ol>
                 <li>
-                    <a href="#negative-filter">Digital Negative Filter</a>
+                    <a href="#digitalNegative-filter">Digital Negative Filter</a>
                 </li>
                 <li>
                     <a href="#rotateimagebyClockwise-filter">Rotate clockwise Filter</a>
@@ -41,7 +41,7 @@
             </p>
 
             <!-- negative filter -->
-            <div class="game-header" id="negative-filter">
+            <div class="game-header" id="digitalNegative-filter">
                 Negative Filter
             </div>
             <p>
@@ -49,26 +49,8 @@
                 image is additionally color-reversed, with red areas appearing cyan, greens appearing magenta, and blues
                 appearing yellow, and vice versa.
 
-                <!-- fixed part -->
-            <h2 class="text-center">Upload image for demo</h2>
+            <div class="filter-div" imgs="1" id="digitalNegative"></div>
 
-            <!-- change ID as per your filter -->
-            <input type="file" name="imageFile" id="negative-filter-inp" class="file-inputs" autocomplete="off">
-
-            <!-- change the image ID as per your filter and change place holder as well -->
-
-            <span>Original Image:</span>
-            <img src="" id="negative-filter-img-inp" alt="Image-input-here">
-
-            <span>Negative filter Image:</span>
-            <img src="" id="negative-filter-img-out" alt="Negative-image-output-here">
-
-            <!-- change the btn id as per your filter name -->
-
-
-            <button id="negative-filter-btn"
-                onclick='getFilter("digitalNegative","negative-filter-inp","negative-filter-img-inp","negative-filter-img-out" )'>get
-                Negative</button>
             </p>
 
             <!-- rotateimagebyClockwise filter -->
@@ -78,27 +60,7 @@
             <p>
                 Rotate the Image Clockwise
 
-                <!-- fixed part -->
-            <h2 class="text-center">Upload image for demo</h2>
-
-            <!-- change ID as per your filter -->
-            <input type="file" name="imageFile" id="rotateimagebyClockwise-filter-inp" class="file-inputs"
-                autocomplete="off">
-
-            <!-- change the image ID as per your filter and change place holder as well -->
-
-            <span>Original Image:</span>
-            <img src="" id="rotateimagebyClockwise-filter-img-inp" alt="Image-input-here">
-
-            <span>Negative filter Image:</span>
-            <img src="" id="rotateimagebyClockwise-filter-img-out" alt="image-output-here">
-
-            <!-- change the btn id as per your filter name -->
-
-
-            <button id="negative-filter-btn"
-                onclick='getFilter("rotateimagebyClockwise","rotateimagebyClockwise-filter-inp","rotateimagebyClockwise-filter-img-inp","rotateimagebyClockwise-filter-img-out" )'>Rotate
-                Clockwise</button>
+            <div class="filter-div" imgs="1" id="rotateimagebyClockwise"></div>
             </p>
 
             <!-- cartoonify filter -->
@@ -108,27 +70,7 @@
             <p>
                 cartoonify dfghjk
 
-                <!-- fixed part -->
-            <h2 class="text-center">Upload image for demo</h2>
-
-            <!-- change ID as per your filter -->
-            <input type="file" name="imageFile" id="cartoonify-filter-inp" class="file-inputs" autocomplete="off">
-
-            <!-- change the image ID as per your filter and change place holder as well -->
-
-            <span>Original Image:</span>
-            <img src="" id="cartoonify-filter-img-inp" alt="Image-input-here">
-
-            <span>Negative filter Image:</span>
-            <img src="" id="cartoonify-filter-img-out" alt="image-output-here">
-
-            <!-- change the btn id as per your filter name -->
-
-
-            <button id="cartoonify-filter-btn" onclick='getFilter("cartoonify",
-                "cartoonify-filter-inp",
-                "cartoonify-filter-img-inp",
-                "cartoonify-filter-img-out" )'>cartoonify</button>
+            <div class="filter-div" imgs="1" id="cartoonify"></div>
             </p>
 
         </div>

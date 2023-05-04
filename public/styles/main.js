@@ -17,7 +17,12 @@ const postData = async (url = "", data = {}) => {
 }
 
 let imageFilesMap = {}
-window.onload = () => {
+window.onload = async () => {
+
+    await new Promise(function (resolve, reject) {
+        makeFilterDivContent()
+        resolve(10);
+    })
 
     imageFilesMap = {}
 
@@ -40,8 +45,46 @@ window.onload = () => {
     }
 }
 
+const makeFilterDivContent = () => {
+    let divs = document.getElementsByClassName("filter-div")
+    for (let i = 0; i < divs.length; ++i) {
+        let id = divs[i].id
+        let imageCount = divs[i].getAttribute("imgs")
+        // console.log(id);
+        // console.log(imageCount);
+
+        divs[i].innerHTML = `
+            <h2 class="text-center">Upload image for demo</h2>
+
+            <!-- change ID as per your filter -->
+            <input type="file" name="imageFile" id="${id}-filter-inp" class="file-inputs" autocomplete="off">
+
+            <br><br>
+
+            <!-- change the image ID as per your filter -->
+            <span>Original Image:</span>
+            <br>
+
+
+            <img src="" id="${id}-filter-img-inp" alt="image-input-here">
+
+            <br><br>
+            <span>Filter Image:</span>
+
+            <br>
+            <img src="" id="${id}-filter-img-out" alt="image-output-here">
+
+            <!-- change the btn id as per your filter name -->
+            <button id="${id}-filter-btn"
+                onclick='getFilter("${id}","${id}-filter-inp","${id}-filter-img-inp","${id}-filter-img-out" )'>Send</button>
+            </p>
+        `
+    }
+}
+
 async function getFilter(filterName, inp1, imgInp1, imgOut1, inp2 = null, imgInp2 = null) {
     if (inp1 == null || filterName == null) return;
+    console.log("hello");
 
     let img1Base64 = imageFilesMap[inp1]
 
