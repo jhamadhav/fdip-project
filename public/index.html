@@ -32,23 +32,34 @@
                     <a href="#arithmetic-operations">Arithmetic Operations</a>
                     <ol>
                         <li>
-                            <a href="#addition-filter">Addition Filter</a>
+                            <a href="#addition-filter">Addition</a>
                         </li>
                         <li>
-                            <a href="#subtraction-filter">Subtraction Filter</a>
+                            <a href="#subtraction-filter">Subtraction</a>
                         </li>
                         <li>
-                            <a href="#multiplication-filter">Multiplication Filter</a>
+                            <a href="#multiplication-filter">Multiplication</a>
                         </li>
                         <li>
-                            <a href="#division-filter">Division Filter</a>
+                            <a href="#division-filter">Division</a>
                         </li>
                     </ol>
                 </li>
                 <li>
                     <a href="#logical-operations">Logical Operations</a>
                     <ol>
-
+                        <li>
+                            <a href="#AND_op-filter">And</a>
+                        </li>
+                        <li>
+                            <a href="#OR_op-filter">Or</a>
+                        </li>
+                        <li>
+                            <a href="#XOR_op-filter">XOR</a>
+                        </li>
+                        <li>
+                            <a href="#not_filter-filter">Not</a>
+                        </li>
                     </ol>
                 </li>
                 <li>
@@ -70,6 +81,13 @@
             <div class="main-header game-header" id="arithmetic-operations">
                 Arithmetic Operations
             </div>
+            <p>
+                Arithmetic operations in image processing involve performing mathematical operations on the pixel values
+                of two or more images. These operations can be used to manipulate the images to achieve desired effects
+                or to perform calculations.
+                <br> <br>
+                There are four basic arithmetic operations used in image processing:
+            </p>
 
 
             <!-- addition filter -->
@@ -127,6 +145,55 @@
             </p>
 
 
+            <!-- logical filter -->
+            <div class="main-header game-header" id="logical-operations">
+                Logical Operations
+            </div>
+            <p>
+                Logical operations in image processing involve performing Boolean operations on the pixel values of one
+                or more images to create a new image. These operations can be used to combine or isolate specific areas
+                of an image, or to create binary images for further processing.
+                <br><br>
+                There are three basic logical operations used in image processing:
+            </p>
+
+            <div class="game-header" id="AND_op-filter">
+                And Filter
+            </div>
+            <p>
+                Bit-wise conjunction of input array elements.
+            <div class="filter-div" imgs="2" id="AND_op"></div>
+            </p>
+
+
+
+            <div class="game-header" id="OR_op-filter">
+                Or
+            </div>
+            <p>
+                Bit-wise disjunction of input array elements.
+
+            <div class="filter-div" imgs="2" id="OR_op"></div>
+            </p>
+
+
+            <div class="game-header" id="XOR_op-filter">
+                Xor
+            </div>
+            <p>
+                Bit-wise exclusive-OR operation on input array elements.
+
+            <div class="filter-div" imgs="2" id="XOR_op"></div>
+            </p>
+
+            <div class="game-header" id="not_filter-filter">
+                Not
+            </div>
+            <p>
+                Inversion of input array elements.
+
+            <div class="filter-div" imgs="1" id="not_filter"></div>
+            </p>
 
         </div>
     </div>
