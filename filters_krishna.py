@@ -39,7 +39,7 @@ def brightness_control(image, alpha=1.0, beta=0):
     return bright_image
 
 
-def multiplication(image, factor=1.0):
+def multiplication(image, factor=2.0):
     """
     Multiplies each pixel of an image by a factor.
 
@@ -54,7 +54,7 @@ def multiplication(image, factor=1.0):
     return mult_image
 
 
-def division(image, divisor=1.0):
+def division(image, divisor=2.0):
     """
     Divides each pixel of an image by a divisor.
 

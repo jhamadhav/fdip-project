@@ -136,8 +136,8 @@ filterMap = {
     "contrastStretching": contrastStretching,
     "gammaTransformation": gammaTransformation,
     "logTransformation": logTransformation,
-    "grayLevelSlicing": graySlicing,
-    "bitPlaneSlicing": BitplaneSlicing,
-    "histoGramGenration": histogramegen,
-    "contrastControl": contrastcontrol
+    "graySlicing": graySlicing,
+    "BitplaneSlicing": BitplaneSlicing,
+    "histogramegen": histogramegen,
+    "contrastcontrol": contrastcontrol
 }
