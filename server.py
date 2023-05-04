@@ -31,16 +31,24 @@ def upload_file():
     # print(len(reqData["imageFile"]))
 
     # converting image in base64 to image
-    img = readb64(reqData["imageFile1"])
+    imgInp1 = readb64(reqData["imageFile1"])
+
+    imgInp2 = None
+    if(reqData["imageCount"] == 2):
+        imgInp2 = readb64(reqData["imageFile2"])
 
     if(reqData["filter"] not in filterMap.keys()):
         return jsonify({"msg": "filter doesn't exist"})
 
-    img2 = filterMap[reqData["filter"]](img)
+    if(reqData["imageCount"] == 2):
+        outputImage = filterMap[reqData["filter"]](imgInp1, imgInp2)
+    else:
+        outputImage = filterMap[reqData["filter"]](imgInp1)
+
     # print(img2)
     data = {
         "msg": "filter applied",
-        "img": str(base64.b64encode(cv2.imencode('.jpg', img2)[1]))
+        "img": str(base64.b64encode(cv2.imencode('.jpg', outputImage)[1]))
     }
     return jsonify(data)
 

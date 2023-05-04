@@ -59,35 +59,85 @@ def old_tv_filter(image):
 
 def addition(image1, image2):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray1Shape = gray1.shape
+
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    gray2Shape = gray2.shape
+
+    newShape = (min(gray1Shape[0], gray2Shape[0]),
+                min(gray1Shape[1], gray2Shape[1]))
+
+    gray1 = cv2.resize(gray1, newShape)
+    gray2 = cv2.resize(gray2, newShape)
+
     added = cv2.add(gray1, gray2)
     return added
 
 
 def subtraction(image1, image2):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray1Shape = gray1.shape
+
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    gray2Shape = gray2.shape
+
+    newShape = (min(gray1Shape[0], gray2Shape[0]),
+                min(gray1Shape[1], gray2Shape[1]))
+
+    gray1 = cv2.resize(gray1, newShape)
+    gray2 = cv2.resize(gray2, newShape)
+
     subtracted = cv2.subtract(gray1, gray2)
     return subtracted
 
 
 def AND_op(image1, image2):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray1Shape = gray1.shape
+
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    gray2Shape = gray2.shape
+
+    newShape = (min(gray1Shape[0], gray2Shape[0]),
+                min(gray1Shape[1], gray2Shape[1]))
+
+    gray1 = cv2.resize(gray1, newShape)
+    gray2 = cv2.resize(gray2, newShape)
+
     ANDed = cv2.bitwise_and(gray1, gray2, mask=None)
     return ANDed
 
 
 def OR_op(image1, image2):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray1Shape = gray1.shape
+
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    gray2Shape = gray2.shape
+
+    newShape = (min(gray1Shape[0], gray2Shape[0]),
+                min(gray1Shape[1], gray2Shape[1]))
+
+    gray1 = cv2.resize(gray1, newShape)
+    gray2 = cv2.resize(gray2, newShape)
+
     ORed = cv2.bitwise_or(gray1, gray2, mask=None)
     return ORed
 
 
 def XOR_op(image1, image2):
     gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+    gray1Shape = gray1.shape
+
     gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+    gray2Shape = gray2.shape
+
+    newShape = (min(gray1Shape[0], gray2Shape[0]),
+                min(gray1Shape[1], gray2Shape[1]))
+
+    gray1 = cv2.resize(gray1, newShape)
+    gray2 = cv2.resize(gray2, newShape)
+
     XORed = cv2.bitwise_xor(gray1, gray2, mask=None)
     return XORed
 
@@ -102,16 +152,15 @@ def Vertical_stack(image1, image2):
     return stacked_V
 
 
-
 filterMap = {
-    "summer_filter":summer_filter,
-    "winter_filter":winter_filter,
-    "old_tv_filter":old_tv_filter,
-    "addition":addition,
-    "subtraction":subtraction,
-    "AND_op":AND_op,
-    "OR_op":OR_op,
-    "XOR_op":XOR_op,
-    "Horizontal_stack":Horizontal_stack,
-    "Vertical_stack":Vertical_stack
+    "summer_filter": summer_filter,
+    "winter_filter": winter_filter,
+    "old_tv_filter": old_tv_filter,
+    "addition": addition,
+    "subtraction": subtraction,
+    "AND_op": AND_op,
+    "OR_op": OR_op,
+    "XOR_op": XOR_op,
+    "Horizontal_stack": Horizontal_stack,
+    "Vertical_stack": Vertical_stack
 }
