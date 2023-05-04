@@ -100,3 +100,18 @@ def Horizontal_stack(image1, image2):
 def Vertical_stack(image1, image2):
     stacked_V = np.concatenate((image1, image2), axis=0)
     return stacked_V
+
+
+
+filterMap = {
+    "summer_filter":summer_filter,
+    "winter_filter":winter_filter,
+    "old_tv_filter":old_tv_filter,
+    "addition":addition,
+    "subtraction":subtraction,
+    "AND_op":AND_op,
+    "OR_op":OR_op,
+    "XOR_op":XOR_op,
+    "Horizontal_stack":Horizontal_stack,
+    "Vertical_stack":Vertical_stack
+}
